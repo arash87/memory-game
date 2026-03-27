@@ -23,7 +23,7 @@ Recommended App Service settings:
 - Runtime stack: `Node`
 - Node version: `20 LTS` or newer
 - App setting: `SCM_DO_BUILD_DURING_DEPLOYMENT=true`
-- Startup command: `npm run build && npm start`
+- Startup command: `npm start`
 
 Deployment flow:
 
@@ -32,4 +32,4 @@ Deployment flow:
 3. Connect the GitHub repo and branch.
 4. Save and let App Service deploy.
 
-The app will build the Vite client into `dist/` and the Node server in `server.js` will serve the built files.
+The app builds during install via `postinstall`, and the Node server in `server.js` serves the built files from `dist/`.
